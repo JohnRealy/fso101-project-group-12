@@ -106,6 +106,13 @@
 // введе число більше 100, або натисне кнопку
 // скасування в prompt
 
+// let number = 90;
+
+// while (number < 100) {
+//   number = parseFloat(prompt('введіть число більше 100'));
+// }
+// console.log(number);
+
 //* Цикл for
 //TODO: 8 ===================================
 //  Виведіть методом console.log() зірочки від 1 до 7 штук у вигляді трикутника таким чино
@@ -115,12 +122,31 @@
 // ****
 // *******
 
+// let star = '';
+// for (let i = 0; i < 7; i += 1) {
+//   //console.log(i);
+//   star += '*';
+//   console.log(star);
+// }
+
 //TODO: 9 ===================================
 //Якщо число ділитися на 3 повертати
 //fizz якщо ділитися на 5 повертати buzz
 //Якщо ділитися на 3 і на 5 повернути fizzbuzz
 
 // const number = 30;
+// for (let i = 1; i <= number; i += 1) {
+//   // console.log(i);
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log('fizzbuzz');
+//   } else if (i % 3 === 0) {
+//     console.log('fizz');
+//   } else if (i % 5 === 0) {
+//     console.log('buzz');
+//   } else {
+//     console.log(i);
+//   }
+// }
 
 //* Конструкція switch
 //TODO: 13 ===================================
