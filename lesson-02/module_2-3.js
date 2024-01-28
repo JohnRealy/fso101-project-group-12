@@ -154,6 +154,27 @@
 // значення '1', то у змінну result запишемо 'зима', якщо має значення
 // '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
 
+// const num = 4;
+// let result;
+// switch (num) {
+//     case 1:
+//         result = "winter";
+//         break;
+// case 2:
+//         result = "spring";
+//         break;
+//     case 3:
+//         result = "summer";
+//         break;
+//     case 4:
+//         result = "autumn";
+//         break;
+//     default:
+//         result = "Error"
+//         break;
+// }
+// console.log(result);
+
 // ! Масиви і функції
 //TODO:=========task-01=================
 // Створіть масив styles з елементами «Джаз» та «Блюз».
@@ -162,7 +183,17 @@
 // Видалить перший елемент масиву і виведіть його в консоль.
 // Вставте «Реп» і «Реггі» на початок масиву.
 
-//TODO:=========task-02=================
+// const styles = ["Джаз", "Блюз"];
+// styles.push("Рок-н-рол");
+// // styles.unshift(1);
+// // styles[1] = "Класика";
+// const index = styles.indexOf("Блюз");
+// styles[index] = "Класика";
+
+// console.log(styles.shift());
+// console.log(styles);
+
+//TODO:=========task-02================= HOMEWORK!!!
 //Перетворити рядок, що містить слова, розділені комами, в масив слів і вивести кожне слово в окремому рядку.
 // const str = 'JavaScript, HTML, CSS, React';
 
@@ -194,13 +225,29 @@
 // менше з чисел a, b
 // Потрібно додати перевірку, що функція отримує числа
 
+// function min(a, b) {
+//     if (typeof a !== "number" || typeof b !== "number") return "Error";
+//     // return Math.min(a, b);
+//     return a < b ? a : b;
+// }
+// console.log(min(5, 10));
+
 //TODO:=============task-08=================
 // напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
 
-// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+function sumAdjacentNumbers(array) {
+    const newArr = [];
+    for (let i = 0; i < array.length -1; i++) {
+        console.log(array[i]);
+       newArr.push(array[i] + array[i+1]) 
+    }
+    return newArr;
+}
 
-// const result = sumAdjacentNumbers(someArr);
-// console.log(result); // [33, 45, 39, 17, 25, 27, 29]
+const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+const result = sumAdjacentNumbers(someArr);
+console.log(result); // [33, 45, 39, 17, 25, 27, 29]
 
 //TODO:=========task-09=================
 //Напишіть функцію caclculateAverage()
