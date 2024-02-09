@@ -235,19 +235,19 @@
 //TODO:=============task-08=================
 // напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
 
-function sumAdjacentNumbers(array) {
-    const newArr = [];
-    for (let i = 0; i < array.length -1; i++) {
-        console.log(array[i]);
-       newArr.push(array[i] + array[i+1]) 
-    }
-    return newArr;
-}
+// function sumAdjacentNumbers(array) {
+//     const newArr = [];
+//     for (let i = 0; i < array.length -1; i++) {
+//         console.log(array[i]);
+//        newArr.push(array[i] + array[i+1])
+//     }
+//     return newArr;
+// }
 
-const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
 
-const result = sumAdjacentNumbers(someArr);
-console.log(result); // [33, 45, 39, 17, 25, 27, 29]
+// const result = sumAdjacentNumbers(someArr);
+// console.log(result); // [33, 45, 39, 17, 25, 27, 29]
 
 //TODO:=========task-09=================
 //Напишіть функцію caclculateAverage()
@@ -270,3 +270,4 @@ console.log(result); // [33, 45, 39, 17, 25, 27, 29]
 // const numbers = [5, 11, 21, 8, 7, 15, 11, 11];
 
 // console.log(getOddNumbers(numbers));
+
