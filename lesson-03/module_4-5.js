@@ -6,15 +6,51 @@
 // 1 додати поле mood зі значенням 'happy'
 // 2 замінити hobby на 'skydiving'
 
+// const human = {
+//     username: "John",
+//     hobby: "football",
+//     age: 22,
+
+//     greet() {
+//         console.log(`Hello ${this.username}`)
+//      }
+// }
+// const human2 = Object.create(human)
+// human2.username = "Elena"
+
+// human.hobby = "skydiving"
+// human["age"] = 25
+
+// console.log(human);
+
+// console.log(human2);
+// human2.greet()
+// human.greet()
+// console.log(human.username);
+
 //TODO:============task-02==============================================
 // Створіть об'єкт "прямокутник" з властивостями "довжина" та "ширина". Напишіть метод "calculateArea", який буде обчислювати площу прямокутника на основі його довжини та ширини.
+// const square = {
+//     heigth: 100,
+//     width: 150,
 
+//     calculateArea() {
+//         return this.heigth * this.width
+//     }
+// }
 // console.log(square.calculateArea());
 
 //TODO:============task-03==============================================
 // Створіть об'єкт "магазин" зі списком товарів. Напишіть метод "hasProduct", який буде перевіряти, чи є певний товар в наявності на складі магазину.
+// const store = {
+//     goods: ["apple", "banana", "kiwi"],
 
-// console.log(store.hasProduct('apple'));
+//     hasProduct(good) { 
+//         return this.goods.includes(good)
+//     }
+// }
+
+// console.log(store.hasProduct('tomato'));
 
 //TODO:============task-04==============================================
 // 4. Створіть об'єкт "кошик" зі списком товарів та їх цін. Напишіть метод "calculateTotal", який буде обчислювати загальну суму товарів у кошику.
