@@ -196,21 +196,37 @@
 //TODO:=========task-02================= HOMEWORK!!!
 //Перетворити рядок, що містить слова, розділені комами, в масив слів і вивести кожне слово в окремому рядку.
 // const str = 'JavaScript, HTML, CSS, React';
+// const masStr = str.split(",");
+// masStr.forEach(item => console.log(item));
 
 //TODO:=========task-03=================
 // Знайти кількість слів у рядку, використовуючи методи масивів та цикл for...of.
 // const message = 'JavaScript is a popular programming language.';
-
+// const masMessage = message.split(" ");
+// console.log(masMessage);
+// console.log(masMessage.length);
+// let sm = 0;
+// for (let item of masMessage) {
+//     sm += 1;
+// }
+// console.log(sm);
 //TODO:=========task-04=================
 // Об'єднати масив слів в рядок, розділений комами та пробілами.
 // const words = ['JavaScript', 'HTML', 'CSS', 'React'];
 
+// console.log(words.join(","));
 //TODO:=========task-05=================
 // Знайти всі елементи масиву, що містять задану підстроку, та об'єднати їх у новий масив, після чого вивести у консоль лог повідомлення "Масив елементів, що містять підстроку substring: ..." .Результат повинен бути розділений комами та пробілами.(використати indexOf)
 
 // const stringArray = ['JavaScript', 'HTML', 'CSS', 'React'];
 // const substring = 'S';
-
+// const newArr = [];
+// for (let item of stringArray) {
+//     if (item.includes(substring)) {
+//         newArr.push(item);
+//     }
+// }
+// const joinedArray = newArr.join(", ")
 // console.log(
 //   `Масив елементів, що містять підстроку ${substring} : ${joinedArray}`
 // );
@@ -219,6 +235,21 @@
 // Перевірити, чи містить масив заданий елемент. Якщо містить, видалити його, якщо ні - додати в кінець масиву.
 //  const array = ['JavaScript', 'HTML', 'CSS', 'SS'];
 //  const elem = 'SS';
+// for (let i = 0; i <= array.length - 1; i++) {
+//     if (array[i] === elem) {
+//       array.splice(i,1);
+//     }
+// }
+// console.log(array);
+// if (array.includes(elem)) {
+//       console.log(array);
+// } else {
+//     array.push(elem);
+//     }
+
+// console.log(array);
+// const newArrayDel = array.filter(item => item !== elem);
+// console.log(newArrayDel);
 
 //TODO:============task-07==============
 // Напишіть функцію min(a, b), яка повертає
@@ -236,6 +267,7 @@
 // напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
 
 // function sumAdjacentNumbers(array) {
+
 //     const newArr = [];
 //     for (let i = 0; i < array.length -1; i++) {
 //         console.log(array[i]);
@@ -254,20 +286,51 @@
 //яка приймає довільну кількість
 //аргументів і повертає їхнє середнє значення.
 //Додати перевірку, що аргументи це числа. Array.from()
-
-// console.log(calculateAverage(10, 10, 20, 200));
-
+// function calculateAverage(...args) {
+//     let sum = 0;
+//     for (let i = 0; i < args.length; i++) {
+//         console.log(typeof(args[i]));
+//         if (typeof(args[i]) === "number") {
+//             sum += args[i];
+//         } else {return ' Errore '}
+//     }
+//     return sum / args.length;
+//     // args.reduce((sum, item) => { return sum + item }, 0); 
+// }
+//  console.log(calculateAverage(10, 10, 20, 200));
+//  console.log(calculateAverage(10, 10, 'hyj', 200));
 //TODO:=============task-10=================
 // Написати функцію, яка приймає рядок і повертає кількість голосних літер у цьому рядку. `Містить ${count} голосних`
 
 // const str = "This is a new line";
 // const vowels = ["a", "e", "i", "o", "u"];
-
+// function countVowels(str) {
+//     const strArray = str.split("");
+//     console.log(strArray);
+//     let count = 0;
+//     for (let i = 0; i < strArray.length; i++) {
+//       for (let j = 0; j < vowels.length; j++) {
+//           if (strArray[i] === vowels[j]) {
+//               count += 1;
+//         }
+        
+//       }
+        
+//     }
+//     return `Містить ${count} голосних`;
+// }
 // console.log(countVowels(str));
 
 //TODO:=========task-11=================
 // Знайти перший парний елемент масиву, який більший за 10, використовуючи цикл з оператором break та continue.
-// const numbers = [5, 11, 21, 8, 7, 15, 11, 11];
-
+// const numbers = [5, 11, 28, 8, 7, 15, 11, 20];
+// function getOddNumbers(numbers) {
+    
+//     for (let item of numbers) {
+//         if (item % 2 === 0 && item > 10) {
+//             return item;
+//         }
+//     }
+// }
 // console.log(getOddNumbers(numbers));
 
