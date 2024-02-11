@@ -346,3 +346,13 @@
 //     .toSorted((a, b) => b.localeCompare(a))
 //     .find(el => el === 'Андрій')
 // );
+
+//* .map під капотом ;)
+
+// const newArr = [];
+
+// for (let i = 0; i < students.length; i += 1) {
+//   newArr.push(students[i].name + '!!!');
+// }
+
+// console.log(newArr);
