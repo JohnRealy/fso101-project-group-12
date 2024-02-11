@@ -286,22 +286,38 @@
 //яка приймає довільну кількість
 //аргументів і повертає їхнє середнє значення.
 //Додати перевірку, що аргументи це числа. Array.from()
-function calculateAverage(...args) {
-    if (!Array.isArray(args)){ return alert("not array")}
-    let sum = 0;
-    for (let i = 0; i < args.length; i++) {
-        // console.log(typeof(args[i]));
-        if (typeof(args[i]) === "number") {
-            sum += args[i];
-        } else {return ' Errore '}
-    }
-    return sum / args.length;
- args.reduce((sum, item) => { return sum + item }, 0);
-}
- console.log(calculateAverage(10, 10, 20, 200));
- console.log(calculateAverage(10, 10, 'hyj', 200));
+// function calculateAverage(...args) {
+//     if (!Array.isArray(args)){ return alert("not array")}
+//     let sum = 0;
+//     for (let i = 0; i < args.length; i++) {
+//         // console.log(typeof(args[i]));
+//         if (typeof(args[i]) === "number") {
+//             sum += args[i];
+//         } else {return ' Errore '}
+//     }
+//     return sum / args.length;
+//  args.reduce((sum, item) => { return sum + item }, 0);
+// }
+//  console.log(calculateAverage(10, 10, 20, 200));
+//  console.log(calculateAverage(10, 10, 'hyj', 200));
 
-console.log(Array.isArray([]));
+// console.log(Array.isArray([]));
+
+function calculateAverage() {
+  const args = arguments;
+  let sum = 0;
+  let totalCount = 0;
+  for (const arg of args) {
+    if (typeof arg !== 'number') {
+      continue;
+    }
+    sum += arg;
+    totalCount += 1;
+  }
+  return sum / totalCount;
+}
+
+console.log(calculateAverage(10, 10, 20, 200));
 //TODO:=============task-10=================
 // Написати функцію, яка приймає рядок і повертає кількість голосних літер у цьому рядку. `Містить ${count} голосних`
 
@@ -316,9 +332,9 @@ console.log(Array.isArray([]));
 //           if (strArray[i] === vowels[j]) {
 //               count += 1;
 //         }
-        
+
 //       }
-        
+
 //     }
 //     return `Містить ${count} голосних`;
 // }
@@ -328,7 +344,7 @@ console.log(Array.isArray([]));
 // Знайти перший парний елемент масиву, який більший за 10, використовуючи цикл з оператором break та continue.
 // const numbers = [5, 11, 28, 8, 7, 15, 11, 20];
 // function getOddNumbers(numbers) {
-    
+
 //     for (let item of numbers) {
 //         if (item % 2 === 0 && item > 10) {
 //             return item;
@@ -336,4 +352,3 @@ console.log(Array.isArray([]));
 //     }
 // }
 // console.log(getOddNumbers(numbers));
-

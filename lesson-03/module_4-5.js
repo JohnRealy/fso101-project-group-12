@@ -48,13 +48,19 @@
 //TODO:============task-03==============================================
 // Створіть об'єкт "магазин" зі списком товарів. Напишіть метод "hasProduct", який буде перевіряти, чи є певний товар в наявності на складі магазину.
 // const store = {
-//     goods: ["apple", "banana", "kiwi"],
+//   goods: ['apple', 'banana', 'kiwi'],
 
-//     hasProduct(good) { 
-//         return this.goods.includes(good)
-//     }
-// }
+//   hasProduct(good) {
+//     return this.goods.includes(good);
+//   },
+//   addProduct(newProduct) {
+//     this.goods.push(newProduct);
+//   },
+// };
 
+// console.log(store.hasProduct('tomato'));
+// store.addProduct('tomato');
+// console.log(store.goods);
 // console.log(store.hasProduct('tomato'));
 
 //TODO:============task-04==============================================
@@ -130,7 +136,7 @@
 //             if (typeof obj[key] === "number") {
 //                 obj[key] *= 2;
 //             }
-            
+
 //         }
 //     }
 //     return obj;
@@ -172,15 +178,34 @@
 //TODO:============task-01=========================
 // Напишіть функцію, яка приймає два числа і колбек-функцію. Функція повинна помножити числа між собою та передати результат дії до колбек-функції. Колбек-функція повинна, у разі, якщо, це число є парним - помножити це число на себе, якщо ні - взяти квадратний корінь з цього числа, та вивести результат у консоль лог.
 
-// const result = performOperation(20, 40, callbackFunction);
+// function performOperation(a, b, callback) {
+//   return callback(a * b);
+// }
+// function callbackFunction(number) {
+//   return number % 2 === 0 ? Math.pow(number, 2) : Math.sqrt(number);
+// }
+
+// function isEven(number) {
+//   return number % 2 === 0 ? 'even' : 'odd';
+// }
+
+// const result = performOperation(21, 43, callbackFunction);
+// const result2 = performOperation(21, 43, isEven);
+
 // console.log(result);
+// console.log(result2);
 
 //! Array methods
 //TODO:=========task-01=================
 // Дано масив чисел [1, 2, 3, 4, 5]. Створіть новий масив, що містить квадрати кожного елементу вхідного масиву. Очікуваний результат: [1, 4, 9, 16, 25].
 
-// const res = getNewArray([1, 2, 3], 5);
+// const numbers = [1, 2, 3, 4, 5];
+
+// const getNewArray = arr => arr.map(el => el ** 2);
+
+// const res = getNewArray(numbers);
 // console.log(res);
+// console.log(numbers);
 
 //TODO:=========task-02=================
 // Дано масив об'єктів {id: 1, values: [1, 2, 3]}, {id: 2, values: [4, 5, 6]}, {id: 3, values: [7, 8, 9]}. Створіть новий масив, що містить всі значення з масивів values кожного об'єкту, збережених в одному масиві. Очікуваний результат: [1, 2, 3, 4, 5, 6, 7, 8, 9].
@@ -190,6 +215,8 @@
 //   { id: 2, values: [4, 5, 6] },
 //   { id: 3, values: [7, 8, 9] },
 // ];
+
+// const flatArray = arr => arr.flatMap(el => el.values);
 
 // const res = flatArray(data);
 // console.log(res);
@@ -203,6 +230,8 @@
 //   { name: 'Bob', age: 19 },
 // ];
 
+// const checkAge = arr => arr.some(el => el.age < 20);
+
 // const res = checkAge(people);
 // console.log(res);
 
@@ -210,6 +239,8 @@
 //  Дано масив чисел [2, 4, 6, 8, 10]. Перевірте, чи є кожен елемент масиву парним. Очікуваний результат: true.
 
 // const numbers = [2, 4, 6, 8, 10];
+
+// const checkEvenArray = arr => arr.every(el => el % 2 === 0);
 
 // const res = checkEvenArray(numbers);
 // console.log(res);
@@ -219,11 +250,15 @@
 
 // const numbers = [1, 2, 3, 4, 5];
 
-// const res = getNumber(arr, 3);
+// const getNumber = arr => arr.find(el => el > 3);
+
+// const res = getNumber(numbers);
 // console.log(res);
 
 //TODO:=========task-06=================
 // Відсортуйте масив чисел [4, 2, 5, 1, 3] у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
+
+// const sortedArray = arr => arr.toSorted((a, b) => a - b);
 
 // const numbersArray = [4, 2, 5, 1, 3];
 
@@ -235,6 +270,8 @@
 
 // const stringArray = ['banana', 'orange', 'apple', 'pear'];
 
+// const sortedArray = arr => arr.toSorted((a, b) => a.localeCompare(b));
+
 // const res = sortedArray(stringArray);
 // console.log(res);
 
@@ -242,12 +279,13 @@
 //  Відсортуйте масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19} за віком у порядку зростання. Очікуваний результат: [{name: "Bob", age: 19}, {name: "John", age: 27}, {name: "Jane", age: 31}].
 
 // const users = [
-//   { name: 'John', age: 27 },
 //   { name: 'Jane', age: 31 },
+//   { name: 'John', age: 27 },
 //   { name: 'Bob', age: 19 },
 // ];
 
-// const ageSortedUsers = (arr) => [...arr].toSorted((a, b) => a.age - b.age);
+// const ageSortedUsers = arr =>
+//   arr.toSorted((a, b) => a.name.localeCompare(b.name));
 
 // const res = ageSortedUsers(users);
 // console.log(res);
@@ -261,6 +299,8 @@
 //   { name: 'Bob', age: 19 },
 // ];
 
+// const getAge = arr => arr.filter(el => el.age > 20);
+
 // const res = getAge(user, 25);
 // console.log(res);
 
@@ -268,6 +308,8 @@
 // Дано масив чисел [1, 2, 3, 4, 5]. Застосуйте метод reduce для обчислення суми елементів масиву
 
 // const numbers = [1, 2, 3, 4, 5];
+
+// const sum = arr => arr.reduce((acc, el) => acc + el, 0);
 
 // const res = sum(numbers);
 // console.log(res);
@@ -279,3 +321,28 @@
 
 // const res = averageValue(arr);
 // console.log(res);
+
+//!For each
+
+// const numbers = [1, 2, 3, 4, 5];
+// const newArr = [];
+// const sum = arr => arr.forEach(el => newArr.push(el ** 2));
+
+// sum(numbers);
+// console.log(newArr);
+
+//!Ланцюжок
+
+// const students = [
+//   { name: 'Андрій', surname: 'Іванов', grade: 4.5 },
+//   { name: 'Олександр', surname: 'Петров', grade: 3.9 },
+//   { name: 'Марія', surname: 'Сидорова', grade: 4.8 },
+//   { name: 'Ірина', surname: 'Федорова', grade: 4.2 },
+// ];
+
+// console.log(
+//   students
+//     .map(el => el.name)
+//     .toSorted((a, b) => b.localeCompare(a))
+//     .find(el => el === 'Андрій')
+// );
