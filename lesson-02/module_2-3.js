@@ -286,19 +286,22 @@
 //яка приймає довільну кількість
 //аргументів і повертає їхнє середнє значення.
 //Додати перевірку, що аргументи це числа. Array.from()
-// function calculateAverage(...args) {
-//     let sum = 0;
-//     for (let i = 0; i < args.length; i++) {
-//         console.log(typeof(args[i]));
-//         if (typeof(args[i]) === "number") {
-//             sum += args[i];
-//         } else {return ' Errore '}
-//     }
-//     return sum / args.length;
-//     // args.reduce((sum, item) => { return sum + item }, 0); 
-// }
-//  console.log(calculateAverage(10, 10, 20, 200));
-//  console.log(calculateAverage(10, 10, 'hyj', 200));
+function calculateAverage(...args) {
+    if (!Array.isArray(args)){ return alert("not array")}
+    let sum = 0;
+    for (let i = 0; i < args.length; i++) {
+        // console.log(typeof(args[i]));
+        if (typeof(args[i]) === "number") {
+            sum += args[i];
+        } else {return ' Errore '}
+    }
+    return sum / args.length;
+ args.reduce((sum, item) => { return sum + item }, 0);
+}
+ console.log(calculateAverage(10, 10, 20, 200));
+ console.log(calculateAverage(10, 10, 'hyj', 200));
+
+console.log(Array.isArray([]));
 //TODO:=============task-10=================
 // Написати функцію, яка приймає рядок і повертає кількість голосних літер у цьому рядку. `Містить ${count} голосних`
 

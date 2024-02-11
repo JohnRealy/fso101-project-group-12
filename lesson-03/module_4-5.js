@@ -54,9 +54,19 @@
 
 //TODO:============task-04==============================================
 // 4. Створіть об'єкт "кошик" зі списком товарів та їх цін. Напишіть метод "calculateTotal", який буде обчислювати загальну суму товарів у кошику.
-
+// const cart = {
+//     product: ["apple", "banana", "kiwi"],
+//     prices: [10, 20, 30],
+//     calculateTotal() {
+//         let sum = 0;
+//         for (let price of this.prices) {
+//             sum += price
+//         }
+//         return sum;
+//     }
+// }
 // console.log(cart.calculateTotal());
-
+// window.console.log(1, 2, 3)
 //! Перебір об'єктів: for...in і методи Object.keys|values|entries
 //TODO:============task-01======================================================
 // У нас є об'єкт, у якому зберігатимуться зарплати
