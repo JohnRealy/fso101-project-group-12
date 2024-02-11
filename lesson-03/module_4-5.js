@@ -18,6 +18,11 @@
 // const human2 = Object.create(human)
 // human2.username = "Elena"
 
+// for (const key in human2) {
+//     if (human2.hasOwnProperty(key)) {
+// console.log(key);
+//     }
+// }
 // human.hobby = "skydiving"
 // human["age"] = 25
 
@@ -81,6 +86,12 @@
 //   Ajax: 1470,
 // };
 
+// console.log(Object.values(salaries));
+// let sum = 0;
+// for (const number of Object.values(salaries)) {
+//     sum = + number;
+
+// }
 // console.log(sum);
 
 //TODO:============task-02======================================================
@@ -96,7 +107,11 @@
 //   merried: false,
 // };
 
-// changeObject(user);
+// function checkObject(obj) {
+//     return Object.entries(obj);
+// }
+
+// console.log(checkObject(user));
 
 //TODO:============task-03======================================================
 // Створіть функцію multiplyNumeric(obj),
@@ -109,8 +124,19 @@
 //   title: 'My menu',
 // };
 
-// console.log(multiplyNumeric(menu));
+// function multiplyNumeric(obj) {
+//     for (let key in obj) {
+//         if (obj.hasOwnProperty(key)) {
+//             if (typeof obj[key] === "number") {
+//                 obj[key] *= 2;
+//             }
+            
+//         }
+//     }
+//     return obj;
+// }
 
+// console.log(multiplyNumeric(menu));
 // після виклику функції
 // menu = {
 //   width: 400,
@@ -129,6 +155,16 @@
 //   { name: 'Марія', surname: 'Сидорова', grade: 4.8 },
 //   { name: 'Ірина', surname: 'Федорова', grade: 4.2 },
 // ];
+
+// function findTopStudent(array) {
+//     let topStudent = array[0];
+//     for (let student of array) {
+//         if (student.grade > topStudent.grade) {
+//             topStudent = student;
+//        }
+//     }
+//     return topStudent;
+// }
 
 // console.log(findTopStudent(students));
 
