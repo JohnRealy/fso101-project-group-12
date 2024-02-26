@@ -35,3 +35,9 @@
 span {
   text-decoration: underline;
 }
+
+.text {
+  color: tomato;
+  font-size: 20px;
+  font-weight: 700;
+}
