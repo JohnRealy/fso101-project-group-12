@@ -5,16 +5,16 @@
  * розкритий текст приховується.Нажимаючи на інші елементи меню, попередньо відкриті елементи не закриваються.
  */
 
-const list = document.querySelector(".js-accordion-list")
-list.addEventListener("click", onBtnClick)
-function onBtnClick(event) { 
-    const btn = event.target;
-    if (btn.nodeName !== "BUTTON") { 
-        return;
-    }
-    btn.nextElementSibling.classList.toggle("active");
+const list = document.querySelector('.js-accordion-list');
+list.addEventListener('click', onBtnClick);
+function onBtnClick(event) {
+  const btn = event.target;
+  if (btn.nodeName !== 'BUTTON') {
+    return;
+  }
+  btn.nextElementSibling.classList.toggle('active');
 
-    console.log(event.target);
+  console.log(event.target);
 }
 
 //TODO:=========task-02=======Pagination==========
@@ -24,4 +24,36 @@ function onBtnClick(event) {
  * Функція`handleClick`повинна викликатися коли відбувається клік на елементі`pagination`.
  */
 
-//TODO:=========task-02=======Modal==========
+const listEl = document.querySelector('.js-pagination');
+
+listEl.addEventListener('click', onClick);
+
+function onClick(e) {
+  const btn = e.target;
+  const activeBtn = e.currentTarget.querySelector('.active');
+  if (btn.nodeName !== 'LI') {
+    return;
+  }
+  if (btn.dataset.type === 'page') {
+    btn.classList.toggle('active');
+    activeBtn.classList.toggle('active');
+    return;
+  }
+  if (
+    btn.dataset.type === 'prev' &&
+    activeBtn.previousElementSibling.dataset.type === 'page'
+  ) {
+    activeBtn.classList.toggle('active');
+    activeBtn.previousElementSibling.classList.toggle('active');
+    return;
+  }
+  if (
+    btn.dataset.type === 'next' &&
+    activeBtn.nextElementSibling.dataset.type === 'page'
+  ) {
+    activeBtn.classList.toggle('active');
+    activeBtn.nextElementSibling.classList.toggle('active');
+  }
+}
+
+//TODO:=========task-03=======Modal==========
