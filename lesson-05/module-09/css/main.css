@@ -356,3 +356,11 @@ img {
   object-fit: cover;
   transition: transform var(--animation-duration) var(--timing-function);
 }
+
+body.dark h2 {
+  color: #fff;
+}
+
+body.dark h1 {
+  color: #fff;
+}
