@@ -99,3 +99,65 @@ function onClick(e) {
 </div>
   |============================
 */
+
+const modalBtn = document.querySelector('.js-modal-open');
+
+const body = document.body;
+
+const modal = basicLightbox.create(
+  `<div class="modal">
+  <button type="button" class="close-btn js-modal-close">
+    X
+  </button>
+
+  <form class="login-form js-modal__form">
+    <label>
+      Name
+      <input type="text" name="name" placeholder="enter your name" />
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" placeholder="enter your email" />
+    </label>
+    <label>
+      Password
+      <input
+        type="password"
+        name="password"
+        placeholder="enter your password"
+      />
+    </label>
+    <button class="login-btn" type="submit">
+      Login
+    </button>
+  </form>
+</div>`,
+  {
+    onShow: () => {
+      document.addEventListener('keydown', onEscapeClose);
+      body.style.overflow = 'hidden';
+    },
+    onClose: () => {
+      modalClose.removeEventListener('click', closeModal);
+      document.removeEventListener('keydown', onEscapeClose);
+      body.style.overflow = 'visible';
+    },
+  }
+);
+
+let modalClose;
+
+modalBtn.addEventListener('click', () => {
+  modal.show();
+  modalClose = document.querySelector('.js-modal-close');
+  modalClose.addEventListener('click', closeModal);
+});
+
+function closeModal() {
+  modal.close();
+}
+
+function onEscapeClose(e) {
+  if (e.code !== 'Escape') return;
+  modal.close();
+}
