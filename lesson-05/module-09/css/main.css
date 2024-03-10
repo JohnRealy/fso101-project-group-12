@@ -1,0 +1,358 @@
+:root {
+  --primary: #d81e5b;
+  --secondary: #8a4fff;
+  --grey: #aaa;
+  --light: #eee;
+  --dark: #131a26;
+  --toggle-light: hsl(230, 22%, 74%);
+  --toggle-dark: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Fira sans', sans-serif;
+}
+
+body {
+  background: var(--main-background);
+  color: var(--main-font);
+}
+
+h1,
+h2 {
+  color: var(--dark);
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+p {
+  color: var(--grey);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* components */
+
+.task-title {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0px 40px;
+}
+
+.module-title {
+  text-align: center;
+}
+
+/* counter */
+
+.counter {
+  background-color: var(--dark);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+}
+
+.counter-value {
+  font-size: 8rem;
+  text-align: center;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -1rem;
+}
+
+button {
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+
+  margin: 0 1rem;
+
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+button span {
+  display: block;
+  transition: 0.4s ease-in-out;
+}
+
+button[data-action='reset'] {
+  color: white;
+  opacity: 0.5;
+}
+
+button[data-action='reset']:hover {
+  opacity: 1;
+}
+
+.save {
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save button {
+  color: var(--dark);
+}
+
+button:active {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* switch */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default html checkbox */
+.switch input {
+  opacity: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggle-light);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 32px;
+  bottom: 5px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: linear-gradient(90grad, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+input:checked + .slider:before {
+  transform: translateX(-24px);
+}
+.slider,
+.round {
+  border-radius: 34px;
+}
+
+.round::before {
+  border-radius: 50%;
+}
+
+input:checked + .round::before {
+  background-color: hsl(230, 17%, 14%);
+}
+/* /THEME/ */
+.dark {
+  --main-background: hsl(230, 17%, 14%);
+  --main-font: white;
+}
+
+.light {
+  --main-background: white;
+  --main-font: hsl(230, 17%, 14%);
+}
+
+.toggle-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-switch p {
+  padding: 1em;
+}
+
+/*  */
+
+/* * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: sans-serif;
+    } */
+
+/* .container {
+      margin: 20px auto;
+      width: 500px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    } */
+
+/* h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    } */
+
+form {
+  display: flex;
+}
+
+input[type='text'] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  font-size: 18px;
+}
+
+button[type='submit'] {
+  padding: 10px 20px;
+  margin-left: 5px;
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button[type='submit']:hover {
+  background-color: #006d9e;
+}
+
+ul {
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+li {
+  padding: 10px;
+  background-color: #f2f2f2;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+li div {
+  display: flex;
+  gap: 8px;
+}
+li input {
+  width: 70%;
+  border: none;
+  background-color: #f2f2f2;
+}
+li input.active {
+  width: 70%;
+  background-color: #ffffff;
+}
+li button[data-action='edit'] {
+  background-color: #355075;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+li button[data-action='edit'].active {
+  background-color: #2f7600;
+  color: #fff;
+}
+
+li button[data-action='delete'] {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+li button:hover {
+  opacity: 0.8;
+}
+
+/* foods */
+
+.products-list {
+  display: grid;
+  max-width: 1140px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: 240px;
+  grid-gap: 12px;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-item {
+  position: relative;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+[data-heart] {
+  cursor: pointer;
+}
+
+.checked {
+  color: red; /* або будь-який інший стиль, який ви хочете застосувати до сердечка улюбленої страви */
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
