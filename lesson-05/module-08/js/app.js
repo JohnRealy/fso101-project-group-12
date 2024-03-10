@@ -5,6 +5,18 @@
  * розкритий текст приховується.Нажимаючи на інші елементи меню, попередньо відкриті елементи не закриваються.
  */
 
+const list = document.querySelector(".js-accordion-list")
+list.addEventListener("click", onBtnClick)
+function onBtnClick(event) { 
+    const btn = event.target;
+    if (btn.nodeName !== "BUTTON") { 
+        return;
+    }
+    btn.nextElementSibling.classList.toggle("active");
+
+    console.log(event.target);
+}
+
 //TODO:=========task-02=======Pagination==========
 /**
  * Викоритовуй шаблон пагінації з файлу[pagination.html](./pagination.html) для розробки функціоналу пагінатора.
