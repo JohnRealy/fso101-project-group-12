@@ -107,3 +107,91 @@ ul {
   background-color: #bfff48;
   color: #000000;
 }
+
+/* modal */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96vw;
+  max-width: 450px;
+  height: 100vh;
+  max-height: 610px;
+  overflow-y: scroll;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+button.modal-open {
+  background-color: #43b581;
+
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+button.modal-open:hover {
+  background-color: #3fb072;
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    max-width: 528px;
+    max-height: 580px;
+  }
+}
+
+/* form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.login-form label {
+  margin-bottom: 16px;
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  padding: 4px;
+  font: inherit;
+}
+
+.login-btn {
+  background-color: #7289da;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #677bc4;
+}
