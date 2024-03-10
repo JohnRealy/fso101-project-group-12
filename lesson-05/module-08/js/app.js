@@ -13,8 +13,6 @@ function onBtnClick(event) {
     return;
   }
   btn.nextElementSibling.classList.toggle('active');
-
-  console.log(event.target);
 }
 
 //TODO:=========task-02=======Pagination==========
